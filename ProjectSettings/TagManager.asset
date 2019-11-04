@@ -9,6 +9,8 @@ TagManager:
   - Collectible
   - ScreenControls
   - PauseMenu
+  - Finish Particles
+  - LevelComplete
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class RedKeyScript : MonoBehaviour
 {
     public CircleCollider2D playerCollider; //player collider that the trigger function checks
     public RedBallControl playerScript; //player script to change the key count in the trigger function
+    GameObject particlesObject;
     public ParticleSystem collectParticles;
     public Gradient particleGradient;
     public GradientColorKey[] colorKey;
@@ -16,7 +17,8 @@ public class RedKeyScript : MonoBehaviour
     {
         playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CircleCollider2D>();
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<RedBallControl>();
-        collectParticles = ParticleSystem.FindObjectOfType<ParticleSystem>();
+        particlesObject = GameObject.FindGameObjectWithTag("Particle System");
+        collectParticles = particlesObject.GetComponent<ParticleSystem>();
     }
 
     public Color SetColor(float r, float g, float b)
