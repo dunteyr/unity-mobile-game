@@ -13,6 +13,13 @@ public class GoldenKeyScript : MonoBehaviour
     public GradientAlphaKey[] alphaKey;
     public Color particleColor;
 
+    void Start()
+    {
+        playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CircleCollider2D>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<RedBallControl>();
+        collectParticles = ParticleSystem.FindObjectOfType<ParticleSystem>();
+    }
+
     public Color SetColor(float r, float g, float b)
     {
         particleColor = new Color();
