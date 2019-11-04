@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &634941918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 634941919}
+  - component: {fileID: 634941920}
+  m_Layer: 5
+  m_Name: ScreenControlScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &634941919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634941918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1571410773925471911}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &634941920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634941918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c43398041615634582dc2250c00bb06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isForceButtonPressed: 0
+  isRemForceButtonPressed: 0
+  isRightButtonPressed: 0
+  isLeftButtonPressed: 0
+  forceButton: {fileID: 0}
+  rightForceButton: {fileID: 0}
+  leftForceButton: {fileID: 0}
 --- !u!1 &1571410772140829684
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,8 +251,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1571410772465015404}
-        m_MethodName: OnButtonPress
+      - m_Target: {fileID: 634941920}
+        m_MethodName: OnRightButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -546,8 +601,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1571410772959028268}
-        m_MethodName: onRButtonPressed
+      - m_Target: {fileID: 634941920}
+        m_MethodName: onRemForceButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1077,8 +1132,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1571410773613559845}
-        m_MethodName: OnButtonPress
+      - m_Target: {fileID: 634941920}
+        m_MethodName: OnLeftButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1298,8 +1353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1571410773888381070}
-        m_MethodName: OnButtonPress
+      - m_Target: {fileID: 634941920}
+        m_MethodName: OnForceButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1336,7 +1391,7 @@ GameObject:
   - component: {fileID: 1571410773925471906}
   m_Layer: 5
   m_Name: ScreenControls
-  m_TagString: Untagged
+  m_TagString: ScreenControls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1358,6 +1413,7 @@ RectTransform:
   - {fileID: 1571410773613559833}
   - {fileID: 1571410774141156306}
   - {fileID: 1571410772943778336}
+  - {fileID: 634941919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -17,8 +17,12 @@ public class CMCameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
         playerTransform = playerObject.GetComponent<Transform>();
         playerRB = playerObject.GetComponent<Rigidbody2D>();
+
+        virtCamera.Follow = playerTransform;
+
         zv = playerRB.velocity.magnitude + 10;
         smoothFactor = 0.01f;
     }

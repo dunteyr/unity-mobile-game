@@ -7,6 +7,8 @@ TagManager:
   - UI
   - Particle System
   - Collectible
+  - ScreenControls
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

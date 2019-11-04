@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class UIScript : MonoBehaviour
 {
+
     public RedBallControl player;
     public Text coinText;
     public Text redKeyText;
@@ -14,7 +15,7 @@ public class UIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<RedBallControl>();
     }
 
     // Update is called once per frame

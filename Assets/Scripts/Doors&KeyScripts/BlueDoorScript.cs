@@ -9,6 +9,7 @@ public class BlueDoorScript : MonoBehaviour
 
     void Start()
     {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<RedBallControl>();
         anim = GetComponent<Animator>();
     }
 

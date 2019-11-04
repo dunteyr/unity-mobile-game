@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RedKeyScript : MonoBehaviour
 {
-    public UIScript UIScript;
     public CircleCollider2D playerCollider; //player collider that the trigger function checks
     public RedBallControl playerScript; //player script to change the key count in the trigger function
     public ParticleSystem collectParticles;
@@ -12,6 +11,13 @@ public class RedKeyScript : MonoBehaviour
     public GradientColorKey[] colorKey;
     public GradientAlphaKey[] alphaKey;
     public Color particleColor;
+
+    void Start()
+    {
+        playerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CircleCollider2D>();
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<RedBallControl>();
+        collectParticles = ParticleSystem.FindObjectOfType<ParticleSystem>();
+    }
 
     public Color SetColor(float r, float g, float b)
     {

@@ -6,6 +6,7 @@ public class RedBallControl : MonoBehaviour
 {
     Touch touch;
     public Rigidbody2D rb2d;
+    public Canvas buttonCanvas;
     Vector2 direction;
     public float forceAmount = 15f;
     public int redKeyCount;
@@ -13,10 +14,12 @@ public class RedBallControl : MonoBehaviour
     public int goldenKeyCount;
     public int coins;
 
-    public ForceButton forceButton;
-    public RemForceButton remForceButton;
-    public RightButton rightForceButton;
-    public LeftButton leftForceButton;
+    //public ForceButton forceButton;
+    //public RemForceButton remForceButton;
+    //public RightButton rightForceButton;
+    //public LeftButton leftForceButton;
+
+    public ScreenControlScript screenControlScript;
 
 
     // Start is called before the first frame update
@@ -24,6 +27,15 @@ public class RedBallControl : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        buttonCanvas = GameObject.FindGameObjectWithTag("ScreenControls").GetComponent<Canvas>();
+        screenControlScript = buttonCanvas.GetComponentInChildren<ScreenControlScript>();
+
+        //forceButton = buttonCanvas.GetComponentInChildren<ForceButton>();
+        //remForceButton = buttonCanvas.GetComponentInChildren<RemForceButton>();
+        //rightForceButton = buttonCanvas.GetComponentInChildren<RightButton>();
+        //leftForceButton = buttonCanvas.GetComponentInChildren<LeftButton>();
+
+
         coins = 0;
         redKeyCount = 0;
         blueKeyCount = 0;
@@ -40,15 +52,15 @@ public class RedBallControl : MonoBehaviour
     void FixedUpdate()
     {
         //MoveOnTouch();
-        if (forceButton.isButtonPressed == true)
+        if (screenControlScript.isForceButtonPressed == true)
         {
             rb2d.AddForce(Vector2.up * forceAmount);
         }
-        if(rightForceButton.isButtonPressed == true)
+        if(screenControlScript.isRightButtonPressed == true)
         {
             rb2d.AddForce(Vector2.right * forceAmount);
         }
-        if(leftForceButton.isButtonPressed == true)
+        if(screenControlScript.isLeftButtonPressed == true)
         {
             rb2d.AddForce(Vector2.left * forceAmount);
         }
